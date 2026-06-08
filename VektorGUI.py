@@ -1,4 +1,5 @@
 import tkinter
+#import Aarspreovevektorregner
 
 vindue1 = tkinter.Tk()
 vindue1.title("mitVindue")
@@ -61,12 +62,19 @@ skalarLabel.place(x=column1X, y=startY + spacingY * 5)
 skalar = tkinter.Entry(vindue1)
 skalar.place(x=column1X + 50, y=startY + spacingY * 5)
 
+##########################################
+#beregn knapper og output resultater
 
+#Vektor2DSum = tkinter.Button(vindue1, text = "Beregn",  command=Sum, bg="#BD6B06")
+#Vektor2DSum.place(x = 100, y = 250)
+
+
+#sum2D= tkinter.Label(vindue1)
+#sum2D.place(x=column1X, y=startY + spacingY * 8)
+
+#Vektor2DSum.config(text=f"sum:\t {Aarspreovevektorregner(2, 1, 3, 3 )} ")
 
 ##########################################
-
-
-
 
 
 
