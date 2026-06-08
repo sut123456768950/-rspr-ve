@@ -22,14 +22,11 @@ def Vektor2Dskalar(x1, y1, s):
     return(x, y)
 
 def Vektor2Dlengde(x1, y1):
-    lengde = math.sqrt(x12 + y12)
+    return(math.sqrt(x1**2 + y1**2))
 
-    return(lengde)
 
 def Vektor2Dprikprodukt(x1, y1, x2, y2):
-    prikprodukt = (x1 * x2) + (y1 * y2)
-
-    return(prikprodukt)
+    return (x1 * x2) + (y1 * y2)
 
 def Vektor2Denhedsvektor(x1, y1):
 
@@ -39,6 +36,13 @@ def Vektor2Denhedsvektor(x1, y1):
 
 
     return(enhedsvektorX, enhedsvektorY )
+
+
+def Vektorvinkelimellem2D(x1, y1, x2, y2):
+
+    return(math.acos(Vektor2Dprikprodukt(x1, y1, x2, y2) / (Vektor2Dlengde(x1, y1) * Vektor2Dlengde(x2, y2))))
+
+
 
 
 def Vektor3Dsum(x1, y1, z1, x2, y2, z2):
@@ -66,14 +70,14 @@ def Vektor3Dskalar(x1, y1, z1, s):
     return(x, y, z)
 
 def Vektor3Dlengde(x1, y1, z1):
-    lengde = math.sqrt(x12 + y12 + z1*2)
+     return(math.sqrt(x1**2 + y1**2 + z1**2))
 
-    return(lengde)
+
 
 def Vektor3Dprikprodukt(x1, y1, x2, y2, z1, z2):
-    prikprodukt = (x1 x2) + (y1 * y2) + (z1 * z2)
+    return (x1 * x2) + (y1 * y2) + (z1 * z2)
 
-    return(prikprodukt)
+    
 
 def Vektor3Denhedsvektor(x1, y1, z1):
 
@@ -84,3 +88,11 @@ def Vektor3Denhedsvektor(x1, y1, z1):
 
 
     return(enhedsvektorX, enhedsvektorY, enhedsvektorZ)
+
+
+def Krydsprodukt(x1, y1, z1, x2, y2, z2):
+    krydsproduktX = (y1 * z2) - (z1 * y2)
+    krydsproduktY = (z1 * x2) - (x1 * z2)
+    krydsproduktZ = (x1 * y2) - (y1 * x2)
+
+    return(krydsproduktX, krydsproduktY, krydsproduktZ)
