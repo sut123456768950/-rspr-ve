@@ -1,14 +1,13 @@
 import vektor
+import matplotlib.pyplot as plt
 
 
+plt.xlim(-10, 10)
+plt.ylim(-10, 10)
 
-x1= 22
-y1= 23
-z1= 3
+vektor.Vektor2Denhedsvektor(32, 23)
 
-x2= 7
-y2= -13
-z2= 4
+plt.autoscale()
 
-
-print(vektor.Krydsprodukt(22, 23, 3, 7, -13, 4))
+plt.grid()
+plt.show()
