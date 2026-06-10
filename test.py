@@ -1,12 +1,13 @@
 import vektor
+import matplotlib.pyplot as plt
 
 
+plt.xlim(-10, 10)
+plt.ylim(-10, 10)
 
-x1= 22
-y1= 23
+vektor.Vektor2Denhedsvektor(32, 23)
 
-x2= 7
-y2= -13
+plt.autoscale()
 
-
-print(vektor.Vektor2Dskalar(x1, y1, 2))
+plt.grid()
+plt.show()
