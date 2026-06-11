@@ -89,6 +89,14 @@ def Vektor2Denhedsvektor(x1, y1):
     return(enhedsvektorX, enhedsvektorY)
 
 
+def PunktTilVektor(p1x, p1y, p2x, p2y):
+    x=p1x-p2x
+    y=p1y-p2y
+
+    return(x, y)
+
+
+
 def Vektorvinkelimellem2D(x1, y1, x2, y2):
     
     prik = Vektor2Dprikprodukt(x1, y1, x2, y2)
@@ -261,6 +269,24 @@ def Vektor3Denhedsvektor(x1, y1, z1):
     Scale(x1, y1, z1, enhedx, enhedy, enhedz, 0, 0, 0)
     Testfunktion3D()
     return(enhedx, enhedy, enhedz)
+
+
+
+def PunktTilVektor3D (p1x, p1y, p1z, p2x, p2y, p2z):
+    global fig, ax
+    plot()
+    
+    kordx= p2x - p1x
+    kordy= p2y - p1y
+    kordz= p2z - p1z
+
+    #vektor
+    ax.quiver(p1x, p1y, p1z, p2x, p2y, p2z, color="green")
+
+    Scale(p1x, p1y, p1z, p2x, p2y, p2z, kordx, kordy, kordz)
+    Testfunktion3D()
+
+    return(kordx, kordy, kordz)
 
     
 
