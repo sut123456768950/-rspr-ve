@@ -1,10 +1,10 @@
 import tkinter
-#import Aarspreovevektorregner
+import vektor
 
 vindue1 = tkinter.Tk()
 vindue1.title("mitVindue")
-vindue1.configure(bg="#16522D")
-vindue1.geometry('1200x600')
+vindue1.configure(bg="#164A2B")
+vindue1.geometry('1200x650')
 
 column1X = 20
 column2X = 200
@@ -13,7 +13,23 @@ startY = 30
 labelSpacing = 30
 
 ##########################################
-#inputs og labels til den vektor 1
+#resultat label
+
+resultat= tkinter.Label(vindue1)
+resultat.place(x=column1X, y=startY + spacingY * 8)
+
+##########################################
+#Beregningsfunktioner
+def Vektor2Dsum():
+
+    #henter ting til 2d vektorer.
+    if(X1 != "" and Y1 != "" and X2 != "" and Y2 != ""):
+        svar = vektor.Vektor2Dsum(float(X1.get()), float(Y1.get()), float(X2.get()), float(Y2.get()))
+        resultat.config(text=f"resultat:\t {svar} ")
+    
+
+##########################################
+#inputs og labels til vektor 1
 
 overskriftVektor1 = tkinter.Label(vindue1, text="Vektor 1")
 overskriftVektor1.place(x=column1X, y=20)
@@ -34,7 +50,7 @@ Z1.place(x=column1X + labelSpacing, y=startY + spacingY * 3)
 Y1Label.place(x=column1X, y=startY + spacingY * 3)
 
 ##########################################
-#inputs og labels til den vektor 2
+#inputs og labels til vektor 2
 
 overskriftVektor2 = tkinter.Label(vindue1, text="Vektor 2")
 overskriftVektor2.place(x=column2X, y=20)
@@ -56,7 +72,6 @@ Z2Label.place(x=column2X, y=startY + spacingY * 3)
 
 ##########################################
 #inputs og labels til skalar
-
 skalarLabel = tkinter.Label(vindue1, text="Skalar")
 skalarLabel.place(x=column1X, y=startY + spacingY * 5)
 skalar = tkinter.Entry(vindue1)
@@ -65,14 +80,10 @@ skalar.place(x=column1X + 50, y=startY + spacingY * 5)
 ##########################################
 #beregn knapper og output resultater
 
-#Vektor2DSum = tkinter.Button(vindue1, text = "Beregn",  command=Sum, bg="#BD6B06")
-#Vektor2DSum.place(x = 100, y = 250)
+beregnVektorSum = tkinter.Button(vindue1, command=Vektor2Dsum, text="SUM")
+beregnVektorSum.place(x=column1X , y=startY + spacingY * 6)
 
 
-#sum2D= tkinter.Label(vindue1)
-#sum2D.place(x=column1X, y=startY + spacingY * 8)
-
-#Vektor2DSum.config(text=f"sum:\t {Aarspreovevektorregner(2, 1, 3, 3 )} ")
 
 ##########################################
 
