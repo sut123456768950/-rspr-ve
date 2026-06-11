@@ -4,5 +4,5 @@ import matplotlib.pyplot as plt
 
 
 
-vektor.Vektor2Dsum(-4,5,2,5)
+vektor.Vektor3Dminus(-4,5,2,5,5,23)
 
