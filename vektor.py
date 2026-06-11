@@ -10,7 +10,7 @@ def Vektor2Dsum(x1, y1, x2, y2):
     resultY = y1 + y2
     result = plt.arrow(0,0, resultX, resultY, head_width=0.1, head_length=0.1, length_includes_head=True, color="blue")
     Testfunktion()
-    return (v1,v2,result)
+    return (result)
 
 
 
@@ -23,7 +23,7 @@ def Vektor2Dminus(x1, y1, x2, y2):
     v2 = plt.arrow(x1,y1, a, b, head_width=0.1, head_length=0.1, length_includes_head=True, color="yellow")
     result = plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="red")
     Testfunktion()
-    return(resultx, resulty)
+    return(result)
 
 
 def Vektor2Dskalar(x1, y1, s):
@@ -54,7 +54,7 @@ def Vektor2Dprikprodukt(x1, y1, x2, y2):
     v1=plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
     
     Testfunktion()
-    return (x1 * x2) + (y1 * y2)
+    return (v1)
 
 def Vektor2Denhedsvektor(x1, y1):
 
@@ -68,14 +68,14 @@ def Vektor2Denhedsvektor(x1, y1):
     enhedsvektorY = y1 / lengde
     
     
-    plt.arrow(0, 0, x1, y1, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
+    v1=plt.arrow(0, 0, x1, y1, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
 
-    plt.arrow(0, 0, enhedsvektorX, enhedsvektorY, head_width=0.1, head_length=0.1, length_includes_head=True, color="red")
+    e1=plt.arrow(0, 0, enhedsvektorX, enhedsvektorY, head_width=0.1, head_length=0.1, length_includes_head=True, color="red")
 
     Testfunktion()
 
 
-    return(enhedsvektorX, enhedsvektorY )
+    return(e1)
 
 
 def Vektorvinkelimellem2D(x1, y1, x2, y2):
@@ -162,7 +162,11 @@ def Vektor3Dminus(x1, y1, z1, x2, y2, z2):
    #resultvektorer
    ax.quiver(0,0,0,resultx,resulty,resultz, color="blue")
 
-   scale(resultx, resulty)
+   Scale(resultx, resulty, resultz, x1, y1, z1, x2, y2, z2)
+
+   Testfunktion3D()
+
+   return(resultx, resulty, resultz)
 
 
 
