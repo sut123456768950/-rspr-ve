@@ -47,6 +47,15 @@ def PolaerKoordinater(x, y):
     return (r, math.degrees(vinkel))
 
 
+def KartesianKordinater (vinkel, lengde):
+
+    x=lengde * math.cos(vinkel)
+    y=lengde * math.sin(vinkel)
+
+    return(x, y)
+
+
+
 def Vektor2Dprikprodukt(x1, y1, x2, y2):
     resultx = x1 * x2
     resulty = y1 * y2
@@ -169,13 +178,6 @@ def Vektor3Dminus(x1, y1, z1, x2, y2, z2):
 
 
 
-
-
-
-
-
-
-    
 
 
 def Vektor3Dskalar(x1, y1, z1, s):
