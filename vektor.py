@@ -1,6 +1,8 @@
 import math
 import matplotlib.pyplot as plt
 
+
+
 def Vektor2Dsum(x1, y1, x2, y2):
     v1 = plt.arrow(0,0, x1, y1, head_width=0.1, head_length=0.1, length_includes_head=True, color="green")
     v2 = plt.arrow(x1,y1, x2, y2, head_width=0.1, head_length=0.1, length_includes_head=True, color="yellow")
@@ -8,7 +10,7 @@ def Vektor2Dsum(x1, y1, x2, y2):
     resultY = y1 + y2
     result = plt.arrow(0,0, resultX, resultY, head_width=0.1, head_length=0.1, length_includes_head=True, color="blue")
     Testfunktion()
-    return (resultX, resultY)
+    return (v1,v2,result)
 
 
 
@@ -50,6 +52,7 @@ def Vektor2Dprikprodukt(x1, y1, x2, y2):
     resultx = x1 * x2
     resulty = y1 * y2
     v1=plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
+    
     Testfunktion()
     return (x1 * x2) + (y1 * y2)
 
@@ -90,15 +93,29 @@ def Vektorvinkelimellem2D(x1, y1, x2, y2):
 
 #############################################################
 # Vektor3D funktioner
+# fig = papir
+# ax = kordinantsystemet
 #############################################################
 fig = None
 ax = None
+
+
+def Scale(x,y,z,x1,y1,z1,x2,y2,z2):
+    scaleBack=min(0,x,y,z,x1,y1,z1,x2,y2,z2)
+    scaleForward=max(0,x,y,z,x1,y1,z1,x2,y2,z2)
+
+    ax.set_xlim(scaleBack, scaleForward)
+    ax.set_ylim(scaleBack, scaleForward)
+    ax.set_zlim(scaleBack, scaleForward)
+
 
 def plot ():
     global fig, ax
     if fig == None:
         fig = plt.figure()
         ax = fig.add_subplot(111, projection="3d")
+
+
 
 def Vektor3Dsum(x1, y1, z1, x2, y2, z2):
     plot()
@@ -127,11 +144,34 @@ def Vektor3Dsum(x1, y1, z1, x2, y2, z2):
 
 
 def Vektor3Dminus(x1, y1, z1, x2, y2, z2):
-    x = plt.arrow(0,0, x1, y1, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
-    y = plt.arrow(0,0, x2, y2, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
-    z = plt.arrow(0,0, 0, 0, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
+   global fig, ax
+   plot()
 
-    return(x, y, z)
+ # Første vektorer
+   ax.quiver(0,0,0,x1,y1,z1, color="green")
+
+
+ # anden vektorer
+   ax.quiver(x1, y1, z1, x2, y2, z2, color="yellow")
+
+
+   resultx=x1 - x2
+   resulty=y1 - y2
+   resultz=z1 - z2
+
+   #resultvektorer
+   ax.quiver(0,0,0,resultx,resulty,resultz, color="blue")
+
+   scale(resultx, resulty)
+
+
+
+
+
+
+
+
+
     
 
 
