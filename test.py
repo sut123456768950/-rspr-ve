@@ -4,5 +4,5 @@ import matplotlib.pyplot as plt
 
 
 
-vektor.Krydsprodukt(-4,5,3, 7, 8,-9)
+vektor.Vektor3Dsum(-4,5,3, 7, 8,-9)
 
