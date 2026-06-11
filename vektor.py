@@ -10,7 +10,7 @@ def Vektor2Dsum(x1, y1, x2, y2):
     resultY = y1 + y2
     result = plt.arrow(0,0, resultX, resultY, head_width=0.1, head_length=0.1, length_includes_head=True, color="blue")
     Testfunktion()
-    return (result)
+    return (resultX, resultY)
 
 
 
@@ -23,7 +23,7 @@ def Vektor2Dminus(x1, y1, x2, y2):
     v2 = plt.arrow(x1,y1, a, b, head_width=0.1, head_length=0.1, length_includes_head=True, color="yellow")
     result = plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="red")
     Testfunktion()
-    return(result)
+    return(resultx, resulty)
 
 
 def Vektor2Dskalar(x1, y1, s):
@@ -31,7 +31,7 @@ def Vektor2Dskalar(x1, y1, s):
     y = y1 * s
     v1=plt.arrow(0,0, x, y, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
     Testfunktion()
-    return(v1)
+    return(x, y)
 
 def Vektor2Dlengde(x1, y1):
     return(math.sqrt(x1**2 + y1**2))
@@ -45,7 +45,7 @@ def PolaerKoordinater(x, y):
     vinkel = math.atan2(y, x)
     v1= plt.arrow(0,0, x, y, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
     Testfunktion()
-    return (v1)
+    return (r, vinkel)
 
 
 def Vektor2Dprikprodukt(x1, y1, x2, y2):
@@ -54,7 +54,7 @@ def Vektor2Dprikprodukt(x1, y1, x2, y2):
     v1=plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
     
     Testfunktion()
-    return (v1)
+    return (resultx, resulty)
 
 def Vektor2Denhedsvektor(x1, y1):
 
@@ -75,7 +75,7 @@ def Vektor2Denhedsvektor(x1, y1):
     Testfunktion()
 
 
-    return(e1)
+    return(enhedsvektorX, enhedsvektorY)
 
 
 def Vektorvinkelimellem2D(x1, y1, x2, y2):
@@ -152,7 +152,7 @@ def Vektor3Dminus(x1, y1, z1, x2, y2, z2):
 
 
  # anden vektorer
-   ax.quiver(x1, y1, z1, x2, y2, z2, color="yellow")
+   ax.quiver(x1, y1, z1, -x2, -y2, -z2, color="yellow")
 
 
    resultx=x1 - x2
@@ -180,11 +180,29 @@ def Vektor3Dminus(x1, y1, z1, x2, y2, z2):
 
 
 def Vektor3Dskalar(x1, y1, z1, s):
-    x = plt.arrow(0,0, x1 * s, y1 * s, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
-    y = plt.arrow(0,0, 0, y1 * s, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
-    z = plt.arrow(0,0, 0, z1 * s, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
+    global fig,ax
+    plot()
 
-    return(x, y, z)
+    #første vektorer
+    ax.quiver(0,0,0,x1,y1,z1, color="green")
+   
+    #scalar vektorer
+
+    scalx=x1*s
+    scaly=y1*s
+    scalz=z1*s
+   
+    v1=ax.quiver(0,0,0,scalx,scaly,scalz,color="red")
+
+    Scale(scalx, scaly, scalz, x1, y1, z1)
+
+    Testfunktion3D()
+
+    return(scalx, scaly, scalz)
+
+
+
+
 
 def Vektor3Dlengde(x1, y1, z1):
      return(math.sqrt(x1**2 + y1**2 + z1**2))
