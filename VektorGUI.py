@@ -164,8 +164,13 @@ beregnVektor2Denhedsvektor = tkinter.Button(vindue1, command=Vektor2Denhedsvekto
 beregnVektor2Denhedsvektor.place(x=column1X + 50 , y=startY + spacingY * 7)
 
 beregnVektorvinkelimellem2D = tkinter.Button(vindue1, command=Vektorvinkelimellem2D, text="Imellem2D")
-beregnVektorvinkelimellem2D.place(x=column1X + 120 , y=startY + spacingY * 7)
+beregnVektorvinkelimellem2D.place(x=column1X + 110 , y=startY + spacingY * 7)
 
+beregnVektor2Dprikprodukt = tkinter.Button(vindue1, command=Vektor2Dprikprodukt, text="Imellem2D")
+beregnVektor2Dprikprodukt.place(x=column1X + 180 , y=startY + spacingY * 7)
+
+
+# 3d funktioner
 beregnVektor3Dsum = tkinter.Button(vindue1, command=Vektor3Dsum, text="Sum3D")
 beregnVektor3Dsum.place(x=column1X + 200 , y=startY + spacingY * 7)
 
@@ -182,9 +187,9 @@ beregnVektor3Dprikprodukt = tkinter.Button(vindue1, command=Vektor3Dprikprodukt,
 beregnVektor3Dprikprodukt.place(x=column1X + 80 , y=startY + spacingY * 8)
 
 beregnVektor3Denhedsvektor = tkinter.Button(vindue1, command=Vektor3Denhedsvektor, text="Enheds3D")
-beregnVektor3Denhedsvektor.place(x=column1X + 160 , y=startY + spacingY * 8)
+beregnVektor3Denhedsvektor.place(x=column1X + 140 , y=startY + spacingY * 8)
 
-beregnKrydsprodukt = tkinter.Button(vindue1, command=Vektor3Denhedsvektor, text="Kryds")
+beregnKrydsprodukt = tkinter.Button(vindue1, command=Krydsprodukt, text="Kryds")
 beregnKrydsprodukt.place(x=column1X + 220 , y=startY + spacingY * 8)
 
 
