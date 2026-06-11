@@ -44,16 +44,17 @@ def PolaerKoordinater(x, y):
     vinkel = math.atan2(y, x)
     v1= plt.arrow(0,0, x, y, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
     Testfunktion()
-    return (r, vinkel)
+    return (r, math.degrees(vinkel))
 
 
 def Vektor2Dprikprodukt(x1, y1, x2, y2):
     resultx = x1 * x2
     resulty = y1 * y2
+    result= resultx + resulty
     v1=plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
     
     Testfunktion()
-    return (resultx, resulty)
+    return (result)
 
 def Vektor2Denhedsvektor(x1, y1):
 
@@ -208,20 +209,28 @@ def Vektor3Dlengde(x1, y1, z1):
 
 
 
-def vektor3Dvinkel(x1, y1, z1):
-    return (math.degrees(math.atan2(y1, x1)))
-
-
-def Vektor3DpolaerKoordinater(x, y, z):
-    r = math.sqrt(x**2 + y**2 + z**2)
-    vinkel = math.atan2(y, x)
-    phi = math.acos(z / r)
-
-    return (r, vinkel, phi)
-
 
 def Vektor3Dprikprodukt(x1, y1, x2, y2, z1, z2):
-    return (x1 * x2) + (y1 * y2) + (z1 * z2)
+    global fig, ax
+    plot()
+
+    #første vektorer
+    ax.quiver(0, 0, 0, x1, y1, z1, color="green")
+
+
+    #anden vektorer
+    ax.quiver(0, 0, 0, x2, y2, z2, color="yellow")
+
+    prikx= x1 * x2
+    priky= y1 * y2
+    prikz= z1 * z2
+
+    result= prikx + priky + prikz
+
+    v1=ax.quiver(0,0,0,prikx, priky, prikz, color="blue")
+    Scale(prikx, priky, prikz, x1, y1, z1, x2, y2, z2)
+    Testfunktion3D()
+    return(result)
 
     
 
