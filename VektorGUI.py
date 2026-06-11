@@ -65,8 +65,26 @@ def Vektor3Dminus():
     resultat.config(text=f"resultat:\t {svar} ")
 
 def Vektor3Dskalar():
-    svar = vektor.Vektor3Dskalar(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    svar = vektor.Vektor3Dskalar(float(X1.get()), float(Y1.get()), float(Z1.get()), float(skalar.get()))
     resultat.config(text=f"resultat:\t {svar} ")
+
+def Vektor3Dlengde():
+    svar = vektor.Vektor3Dlengde(float(X1.get()), float(Y1.get()), float(Z1.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def Vektor3Dprikprodukt():
+    svar = vektor.Vektor3Dprikprodukt(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def Vektor3Denhedsvektor():
+    svar = vektor.Vektor3Denhedsvektor(float(X1.get()), float(Y1.get()), float(Z1.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def Krydsprodukt():
+    svar = vektor.Vektor3Dprikprodukt(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+
 
 
 ##########################################
@@ -156,6 +174,18 @@ beregnVektor3Dminus.place(x=column1X + 280 , y=startY + spacingY * 7)
 
 beregnVektor3Dskalar = tkinter.Button(vindue1, command=Vektor3Dskalar, text="Skalar3D")
 beregnVektor3Dskalar.place(x=column1X + 330 , y=startY + spacingY * 7)
+
+beregnVektor3Dlengde = tkinter.Button(vindue1, command=Vektor3Dlengde, text="Laengde3D")
+beregnVektor3Dlengde.place(x=column1X , y=startY + spacingY * 8)
+
+beregnVektor3Dprikprodukt = tkinter.Button(vindue1, command=Vektor3Dprikprodukt, text="Prik3D")
+beregnVektor3Dprikprodukt.place(x=column1X + 80 , y=startY + spacingY * 8)
+
+beregnVektor3Denhedsvektor = tkinter.Button(vindue1, command=Vektor3Denhedsvektor, text="Enheds3D")
+beregnVektor3Denhedsvektor.place(x=column1X + 160 , y=startY + spacingY * 8)
+
+beregnKrydsprodukt = tkinter.Button(vindue1, command=Vektor3Denhedsvektor, text="Kryds")
+beregnKrydsprodukt.place(x=column1X + 220 , y=startY + spacingY * 8)
 
 
 
