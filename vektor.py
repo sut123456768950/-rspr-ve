@@ -13,7 +13,6 @@ def Vektor2Dsum(x1, y1, x2, y2):
     return (v1,v2,result)
 
 
-
 def Vektor2Dminus(x1, y1, x2, y2):
     resultx = x1 - x2
     resulty = y1 - y2

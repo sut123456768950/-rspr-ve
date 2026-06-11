@@ -107,11 +107,8 @@ beregnVektor2Dminus.place(x=column1X + 50 , y=startY + spacingY * 6)
 beregnVektor2Dskalar = tkinter.Button(vindue1, command=Vektor2Dskalar, text="Skalar2D")
 beregnVektor2Dskalar.place(x=column1X + 100 , y=startY + spacingY * 6)
 
-beregnVektor2Dskalar = tkinter.Button(vindue1, command=Vektor2Dskalar, text="Skalar2D")
-beregnVektor2Dskalar.place(x=column1X + 100 , y=startY + spacingY * 6)
-
 beregnVektor2Dlengde = tkinter.Button(vindue1, command=Vektor2Dlengde, text="Laengde2D")
-beregnVektor2Dlengde.place(x=column1X + 100 , y=startY + spacingY * 6)
+beregnVektor2Dlengde.place(x=column1X + 170 , y=startY + spacingY * 6)
 ##########################################
 
 
