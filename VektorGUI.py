@@ -16,12 +16,11 @@ labelSpacing = 30
 #resultat label
 
 resultat= tkinter.Label(vindue1)
-resultat.place(x=column1X, y=startY + spacingY * 8)
+resultat.place(x=column1X, y=startY + spacingY * 10)
 
 ##########################################
 #Beregningsfunktioner
 def Vektor2Dsum():
-    #henter ting til 2d vektorer.
     svar = vektor.Vektor2Dsum(float(X1.get()), float(Y1.get()), float(X2.get()), float(Y2.get()))
     resultat.config(text=f"resultat:\t {svar} ")
     
@@ -39,6 +38,18 @@ def Vektor2Dlengde():
 
 def Vektor2Dvinkel():
     svar = vektor.Vektor2Dvinkel(float(X1.get()), float(Y1.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def PolaerKoordinater():
+    svar = vektor.PolaerKoordinater(float(X1.get()), float(Y1.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def Vektor2Dprikprodukt():
+    svar = vektor.Vektor2Dprikprodukt(float(X1.get()), float(Y1.get()), float(X2.get()), float(Y2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def Vektor2Denhedsvektor():
+    svar = vektor.Vektor2Denhedsvektor(float(X1.get()), float(Y1.get()))
     resultat.config(text=f"resultat:\t {svar} ")
 
 def Vektorvinkelimellem2D():
@@ -109,6 +120,22 @@ beregnVektor2Dskalar.place(x=column1X + 100 , y=startY + spacingY * 6)
 
 beregnVektor2Dlengde = tkinter.Button(vindue1, command=Vektor2Dlengde, text="Laengde2D")
 beregnVektor2Dlengde.place(x=column1X + 170 , y=startY + spacingY * 6)
+
+beregnVektor2Dvinkel = tkinter.Button(vindue1, command=Vektor2Dvinkel, text="Vinkel2D")
+beregnVektor2Dvinkel.place(x=column1X + 240 , y=startY + spacingY * 6)
+
+beregnPolaerKoordinater = tkinter.Button(vindue1, command=PolaerKoordinater, text="Polaer2D")
+beregnPolaerKoordinater.place(x=column1X + 300 , y=startY + spacingY * 6)
+
+beregnVektor2Dprikprodukt = tkinter.Button(vindue1, command=Vektor2Dprikprodukt, text="Prik2D")
+beregnVektor2Dprikprodukt.place(x=column1X , y=startY + spacingY * 7)
+
+beregnVektor2Denhedsvektor = tkinter.Button(vindue1, command=Vektor2Denhedsvektor, text="Prik2D")
+beregnVektor2Denhedsvektor.place(x=column1X , y=startY + spacingY * 7)
+
+beregnVektorvinkelimellem2D = tkinter.Button(vindue1, command=Vektorvinkelimellem2D, text="Prik2D")
+beregnVektorvinkelimellem2D.place(x=column1X , y=startY + spacingY * 7)
+
 ##########################################
 
 
