@@ -135,10 +135,7 @@ def Vektor3Dsum(x1, y1, z1, x2, y2, z2):
     # Resultatvektor
     ax.quiver(0, 0, 0, resultX, resultY, resultZ, color="blue")
 
-    ax.set_xlim([min(0, x1, x2, resultX), max(0, x1, x2, resultX)])
-    ax.set_ylim([min(0, y1, y2, resultY), max(0, y1, y2, resultY)])
-    ax.set_zlim([min(0, z1, z2, resultZ), max(0, z1, z2, resultZ)])
-
+    Scale(resultX, resultY, resultZ, x1, y1, z1, x2, y2, z2)
     Testfunktion3D()
 
     return (resultX, resultY, resultZ)
@@ -196,7 +193,7 @@ def Vektor3Dskalar(x1, y1, z1, s):
    
     v1=ax.quiver(0,0,0,scalx,scaly,scalz,color="red")
 
-    Scale(scalx, scaly, scalz, x1, y1, z1)
+    Scale(scalx, scaly, scalz, x1, y1, z1, 0, 0, 0)
 
     Testfunktion3D()
 
