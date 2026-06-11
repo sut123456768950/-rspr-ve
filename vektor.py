@@ -56,6 +56,8 @@ def Vektor2Dprikprodukt(x1, y1, x2, y2):
     Testfunktion()
     return (result)
 
+
+
 def Vektor2Denhedsvektor(x1, y1):
 
     lengde = Vektor2Dlengde(x1, y1)
@@ -205,7 +207,10 @@ def Vektor3Dskalar(x1, y1, z1, s):
 
 
 def Vektor3Dlengde(x1, y1, z1):
-     return(math.sqrt(x1**2 + y1**2 + z1**2))
+     
+    lengde=math.sqrt(x1**2 + y1**2 + z1**2)
+
+    return(lengde)
 
 
 
@@ -235,22 +240,53 @@ def Vektor3Dprikprodukt(x1, y1, x2, y2, z1, z2):
     
 
 def Vektor3Denhedsvektor(x1, y1, z1):
+    global fig, ax
+    
+    plot()
 
-    enhedsvektorX = x1 / Vektor3Dlengde(x1, y1, z1)
-    enhedsvektorY = y1 / Vektor3Dlengde(x1, y1, z1)
-    enhedsvektorZ = z1 / Vektor3Dlengde(x1, y1, z1)
+    #lengde
+    lengde=math.sqrt(x1**2 + y1**2 + z1**2)
 
+    
 
+    #første vektorer
+    ax.quiver(0, 0, 0, x1, y1, z1, color="green")
 
-    return(enhedsvektorX, enhedsvektorY, enhedsvektorZ)
+    enhedx= x1 / lengde
+    enhedy= y1 / lengde
+    enhedz= z1 / lengde
+
+    #enheds vektorer
+    ax.quiver(0, 0, 0, enhedx, enhedy, enhedz, color="red")
+
+    Scale(x1, y1, z1, enhedx, enhedy, enhedz, 0, 0, 0)
+    Testfunktion3D()
+    return(enhedx, enhedy, enhedz)
+
+    
+
 
 
 def Krydsprodukt(x1, y1, z1, x2, y2, z2):
-    krydsproduktX = (y1 * z2) - (z1 * y2)
-    krydsproduktY = (z1 * x2) - (x1 * z2)
-    krydsproduktZ = (x1 * y2) - (y1 * x2)
+    global fig, ax
+    plot()
 
-    return(krydsproduktX, krydsproduktY, krydsproduktZ)
+    #første vektorer
+    ax.quiver(0, 0, 0, x1, y1, z1, color="green")
+
+    #anden vektorer
+    ax.quiver(0, 0, 0, x2, y2, z2, color="yellow")
+
+    krydsx= (y1 * z2) - (z1 * y2)
+    krydsy= (z1 * x2) - (x1 * z2)
+    krydsz= (x1 * y2) - (y1 * x2)
+
+    #slut vektor
+    ax.quiver(0, 0, 0, krydsx, krydsy, krydsz, color="blue")
+    Scale(krydsx, krydsy, krydsz, x1, y1, z1, x2, y2, z2)
+    Testfunktion3D()
+
+    return(krydsx, krydsy, krydsz)
 
 
 def Testfunktion():
