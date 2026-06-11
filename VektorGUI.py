@@ -56,6 +56,18 @@ def Vektorvinkelimellem2D():
     svar = vektor.Vektorvinkelimellem2D(float(X1.get()), float(Y1.get()), float(X2.get()), float(Y2.get()))
     resultat.config(text=f"resultat:\t {svar} ")
 
+def Vektor3Dsum():
+    svar = vektor.Vektor3Dsum(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def Vektor3Dminus():
+    svar = vektor.Vektor3Dminus(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
+def Vektor3Dskalar():
+    svar = vektor.Vektor3Dskalar(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
 
 ##########################################
 #inputs og labels til vektor 1
@@ -130,11 +142,22 @@ beregnPolaerKoordinater.place(x=column1X + 300 , y=startY + spacingY * 6)
 beregnVektor2Dprikprodukt = tkinter.Button(vindue1, command=Vektor2Dprikprodukt, text="Prik2D")
 beregnVektor2Dprikprodukt.place(x=column1X , y=startY + spacingY * 7)
 
-beregnVektor2Denhedsvektor = tkinter.Button(vindue1, command=Vektor2Denhedsvektor, text="Prik2D")
-beregnVektor2Denhedsvektor.place(x=column1X , y=startY + spacingY * 7)
+beregnVektor2Denhedsvektor = tkinter.Button(vindue1, command=Vektor2Denhedsvektor, text="Enheds2D")
+beregnVektor2Denhedsvektor.place(x=column1X + 50 , y=startY + spacingY * 7)
 
-beregnVektorvinkelimellem2D = tkinter.Button(vindue1, command=Vektorvinkelimellem2D, text="Prik2D")
-beregnVektorvinkelimellem2D.place(x=column1X , y=startY + spacingY * 7)
+beregnVektorvinkelimellem2D = tkinter.Button(vindue1, command=Vektorvinkelimellem2D, text="Imellem2D")
+beregnVektorvinkelimellem2D.place(x=column1X + 120 , y=startY + spacingY * 7)
+
+beregnVektor3Dsum = tkinter.Button(vindue1, command=Vektor3Dsum, text="Sum3D")
+beregnVektor3Dsum.place(x=column1X + 200 , y=startY + spacingY * 7)
+
+beregnVektor3Dminus = tkinter.Button(vindue1, command=Vektor3Dminus, text="Diff3D")
+beregnVektor3Dminus.place(x=column1X + 280 , y=startY + spacingY * 7)
+
+beregnVektor3Dskalar = tkinter.Button(vindue1, command=Vektor3Dskalar, text="Skalar3D")
+beregnVektor3Dskalar.place(x=column1X + 330 , y=startY + spacingY * 7)
+
+
 
 ##########################################
 
