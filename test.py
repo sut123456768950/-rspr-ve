@@ -4,5 +4,5 @@ import matplotlib.pyplot as plt
 
 
 
-vektor.Vektor3Dminus(-4,5,2,5,5,23)
+vektor.Vektor3Dprikprodukt(-4,5,2,5,5,23)
 
