@@ -52,6 +52,10 @@ def Vektor2Denhedsvektor():
     svar = vektor.Vektor2Denhedsvektor(float(X1.get()), float(Y1.get()))
     resultat.config(text=f"resultat:\t {svar} ")
 
+def PunktTilVektor():
+    svar = vektor.PunktTilVektor(float(X1.get()), float(Y1.get()), float(X2.get()), float(Y2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
 def Vektorvinkelimellem2D():
     svar = vektor.Vektorvinkelimellem2D(float(X1.get()), float(Y1.get()), float(X2.get()), float(Y2.get()))
     resultat.config(text=f"resultat:\t {svar} ")
@@ -83,6 +87,11 @@ def Vektor3Denhedsvektor():
 def Krydsprodukt():
     svar = vektor.Vektor3Dprikprodukt(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
     resultat.config(text=f"resultat:\t {svar} ")
+
+def PunktTilVektor3D():
+    svar = vektor.PunktTilVektor3D(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    resultat.config(text=f"resultat:\t {svar} ")
+
 
 
 
@@ -166,8 +175,9 @@ beregnVektor2Denhedsvektor.place(x=column1X + 50 , y=startY + spacingY * 7)
 beregnVektorvinkelimellem2D = tkinter.Button(vindue1, command=Vektorvinkelimellem2D, text="Imellem2D")
 beregnVektorvinkelimellem2D.place(x=column1X + 110 , y=startY + spacingY * 7)
 
-beregnVektor2Dprikprodukt = tkinter.Button(vindue1, command=Vektor2Dprikprodukt, text="Imellem2D")
-beregnVektor2Dprikprodukt.place(x=column1X + 180 , y=startY + spacingY * 7)
+beregnPunktTilVektor = tkinter.Button(vindue1, command=PunktTilVektor, text="PktVec")
+beregnPunktTilVektor.place(x=column1X + 280, y=startY + spacingY * 8)
+
 
 
 # 3d funktioner
@@ -191,6 +201,11 @@ beregnVektor3Denhedsvektor.place(x=column1X + 140 , y=startY + spacingY * 8)
 
 beregnKrydsprodukt = tkinter.Button(vindue1, command=Krydsprodukt, text="Kryds")
 beregnKrydsprodukt.place(x=column1X + 220 , y=startY + spacingY * 8)
+
+beregnPunktTilVektor3D = tkinter.Button(vindue1, command=PunktTilVektor3D, text="PktVec3D")
+beregnPunktTilVektor3D.place(x=column1X + 220 , y=startY + spacingY * 8)
+
+
 
 
 
