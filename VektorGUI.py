@@ -14,7 +14,6 @@ labelSpacing = 30
 
 ##########################################
 #resultat label
-
 resultat= tkinter.Label(vindue1)
 resultat.place(x=column1X, y=startY + spacingY * 10)
 
@@ -91,10 +90,6 @@ def Krydsprodukt():
 def PunktTilVektor3D():
     svar = vektor.PunktTilVektor3D(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
     resultat.config(text=f"resultat:\t {svar} ")
-
-
-
-
 
 ##########################################
 #inputs og labels til vektor 1
@@ -177,7 +172,6 @@ beregnVektorvinkelimellem2D.place(x=column1X + 110 , y=startY + spacingY * 7)
 
 beregnPunktTilVektor = tkinter.Button(vindue1, command=PunktTilVektor, text="PktVec")
 beregnPunktTilVektor.place(x=column1X + 280, y=startY + spacingY * 8)
-
 
 
 # 3d funktioner
