@@ -133,9 +133,9 @@ def Scale(x,y,z,x1,y1,z1,x2,y2,z2):
 
 def plot ():
     global fig, ax
-    if fig == None:
-        fig = plt.figure()
-        ax = fig.add_subplot(111, projection="3d")
+    
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection="3d")
 
 
 
