@@ -1,5 +1,6 @@
 import tkinter
 import vektor
+from tkinter import font
 
 vindue1 = tkinter.Tk()
 vindue1.title("mitVindue")
@@ -11,6 +12,11 @@ column2X = 200
 spacingY = 25
 startY = 30
 labelSpacing = 30
+
+##########################################
+#saetter standardfont til helvetica
+default_font = font.nametofont("TkDefaultFont")
+default_font.configure(family="Helvetica",size=10)
 
 ##########################################
 #resultat label
@@ -141,10 +147,9 @@ skalar = tkinter.Entry(vindue1, bg="#FFF8F0")
 skalar.place(x=column1X + 50, y=startY + spacingY * 5)
 
 ##########################################
-#beregn knapper
+#Opretter beregn-knapper ved at 
 knap2DFrame = tkinter.Frame(vindue1, bg="#2A0C4E")
 knap2DFrame.place(x=column1X, y=200)
-
 
 knapper2D = [
     ("Sum2D", Vektor2Dsum),
@@ -158,12 +163,11 @@ knapper2D = [
     ("Imellem2D", Vektorvinkelimellem2D),
     ("PktVec", PunktTilVektor),
 ]
-
 for i, (tekst, funktion) in enumerate(knapper2D):
     tkinter.Button(knap2DFrame, text=tekst, command=funktion, width=12, bg="#FFF8F0")\
         .grid(row=i // 4, column=i % 4, padx=2, pady=2)
     
-knap3DFrame = tkinter.Frame(vindue1, bg="#2A0C4E" )
+knap3DFrame = tkinter.Frame(vindue1, bg="#2A0C4E")
 knap3DFrame.place(x=column1X, y=300)
 
 knapper3D = [
@@ -176,10 +180,10 @@ knapper3D = [
     ("Kryds", Krydsprodukt),
     ("PktVec3D", PunktTilVektor3D),
 ]
-
 for i, (tekst, funktion) in enumerate(knapper3D):
     tkinter.Button(knap3DFrame, text=tekst, command=funktion, width=12, bg="#FFF8F0" )\
         .grid(row=i // 4, column=i % 4, padx=2, pady=2)
 
 ##########################################
+#koerer programmet
 vindue1.mainloop()
