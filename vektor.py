@@ -9,7 +9,7 @@ def Vektor2Dsum(x1, y1, x2, y2):
     resultX = x1 + x2
     resultY = y1 + y2
     result = plt.arrow(0,0, resultX, resultY, head_width=0.1, head_length=0.1, length_includes_head=True, color="blue")
-    Testfunktion()
+    VektorViser()
     return (resultX, resultY)
 
 
@@ -21,7 +21,7 @@ def Vektor2Dminus(x1, y1, x2, y2):
     v1 = plt.arrow(0,0, x1, y1, head_width=0.1, head_length=0.1, length_includes_head=True, color="green")
     v2 = plt.arrow(x1,y1, a, b, head_width=0.1, head_length=0.1, length_includes_head=True, color="yellow")
     result = plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="red")
-    Testfunktion()
+    VektorViser()
     return(resultx, resulty)
 
 
@@ -29,7 +29,7 @@ def Vektor2Dskalar(x1, y1, s):
     x = x1 * s
     y = y1 * s
     v1=plt.arrow(0,0, x, y, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
-    Testfunktion()
+    VektorViser()
     return(x, y)
 
 def Vektor2Dlengde(x1, y1):
@@ -43,7 +43,7 @@ def PolaerKoordinater(x, y):
     r = math.sqrt(x**2 + y**2)
     vinkel = math.atan2(y, x)
     v1= plt.arrow(0,0, x, y, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
-    Testfunktion()
+    VektorViser()
     return (r, math.degrees(vinkel))
 
 
@@ -61,8 +61,7 @@ def Vektor2Dprikprodukt(x1, y1, x2, y2):
     resulty = y1 * y2
     result= resultx + resulty
     v1=plt.arrow(0,0, resultx, resulty, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
-    
-    Testfunktion()
+    VektorViser()
     return (result)
 
 
@@ -83,7 +82,7 @@ def Vektor2Denhedsvektor(x1, y1):
 
     e1=plt.arrow(0, 0, enhedsvektorX, enhedsvektorY, head_width=0.1, head_length=0.1, length_includes_head=True, color="red")
 
-    Testfunktion()
+    VektorViser()
 
 
     return(enhedsvektorX, enhedsvektorY)
@@ -153,7 +152,7 @@ def Vektor3Dsum(x1, y1, z1, x2, y2, z2):
     ax.quiver(0, 0, 0, resultX, resultY, resultZ, color="blue")
 
     Scale(resultX, resultY, resultZ, x1, y1, z1, x2, y2, z2)
-    Testfunktion3D()
+    VektorViser3D()
 
     return (resultX, resultY, resultZ)
 
@@ -180,7 +179,7 @@ def Vektor3Dminus(x1, y1, z1, x2, y2, z2):
 
    Scale(resultx, resulty, resultz, x1, y1, z1, x2, y2, z2)
 
-   Testfunktion3D()
+   VektorViser3D()
 
    return(resultx, resulty, resultz)
 
@@ -205,7 +204,7 @@ def Vektor3Dskalar(x1, y1, z1, s):
 
     Scale(scalx, scaly, scalz, x1, y1, z1, 0, 0, 0)
 
-    Testfunktion3D()
+    VektorViser3D()
 
     return(scalx, scaly, scalz)
 
@@ -241,7 +240,7 @@ def Vektor3Dprikprodukt(x1, y1, x2, y2, z1, z2):
 
     v1=ax.quiver(0,0,0,prikx, priky, prikz, color="blue")
     Scale(prikx, priky, prikz, x1, y1, z1, x2, y2, z2)
-    Testfunktion3D()
+    VektorViser3D()
     return(result)
 
     
@@ -267,7 +266,7 @@ def Vektor3Denhedsvektor(x1, y1, z1):
     ax.quiver(0, 0, 0, enhedx, enhedy, enhedz, color="red")
 
     Scale(x1, y1, z1, enhedx, enhedy, enhedz, 0, 0, 0)
-    Testfunktion3D()
+    VektorViser3D()
     return(enhedx, enhedy, enhedz)
 
 
@@ -284,7 +283,7 @@ def PunktTilVektor3D (p1x, p1y, p1z, p2x, p2y, p2z):
     ax.quiver(p1x, p1y, p1z, p2x, p2y, p2z, color="green")
 
     Scale(p1x, p1y, p1z, p2x, p2y, p2z, kordx, kordy, kordz)
-    Testfunktion3D()
+    VektorViser3D()
 
     return(kordx, kordy, kordz)
 
@@ -309,19 +308,19 @@ def Krydsprodukt(x1, y1, z1, x2, y2, z2):
     #slut vektor
     ax.quiver(0, 0, 0, krydsx, krydsy, krydsz, color="blue")
     Scale(krydsx, krydsy, krydsz, x1, y1, z1, x2, y2, z2)
-    Testfunktion3D()
+    VektorViser3D()
 
     return(krydsx, krydsy, krydsz)
 
 
-def Testfunktion():
+def VektorViser():
     plt.autoscale()
 
     plt.grid()
     plt.show()
 
 
-def Testfunktion3D():
+def VektorViser3D():
     plot()
     ax.set_xlabel("X")
     ax.set_ylabel("Y")

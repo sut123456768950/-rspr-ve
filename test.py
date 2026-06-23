@@ -4,5 +4,5 @@ import matplotlib.pyplot as plt
 
 
 
-vektor.PunktTilVektor3D(-4,5,3, 7, 8,-9)
+vektor.Vektor2Dminus(-4,5, 7, 8,)
 
