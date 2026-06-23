@@ -5,7 +5,7 @@ import math
 
 vindue1 = tkinter.Tk()
 vindue1.configure(bg="#51355A")
-vindue1.geometry('1200x650')
+vindue1.geometry('500x450')
 
 column1X = 20
 column2X = 200
