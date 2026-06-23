@@ -1,9 +1,9 @@
 import tkinter
 import vektor
 from tkinter import font
+import math
 
 vindue1 = tkinter.Tk()
-vindue1.title("mitVindue")
 vindue1.configure(bg="#51355A")
 vindue1.geometry('1200x650')
 
@@ -90,7 +90,7 @@ def Vektor3Denhedsvektor():
     resultat.config(text=f"resultat:\t {svar} ")
 
 def Krydsprodukt():
-    svar = vektor.Vektor3Dprikprodukt(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
+    svar = vektor.Krydsprodukt(float(X1.get()), float(Y1.get()), float(Z1.get()), float(X2.get()), float(Y2.get()), float(Z2.get()))
     resultat.config(text=f"resultat:\t {svar} ")
 
 def PunktTilVektor3D():
