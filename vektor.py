@@ -36,7 +36,8 @@ def Vektor2Dlengde(x1, y1):
     return(math.sqrt(x1**2 + y1**2))
 
 def Vektor2Dvinkel(x1, y1):
-    return (math.degrees(math.atan2(y1/x1)))
+    vinkel=(math.degrees(math.atan2(y1, x1)))
+    return vinkel
 
 
 def PolaerKoordinater(x, y):
@@ -91,6 +92,9 @@ def Vektor2Denhedsvektor(x1, y1):
 def PunktTilVektor(p1x, p1y, p2x, p2y):
     x=p1x-p2x
     y=p1y-p2y
+
+    v1=plt.arrow(p1x, p1y, x, y, head_width=0.1, head_length=0.1, length_includes_head=True, color="black")
+    VektorViser()
 
     return(x, y)
 
